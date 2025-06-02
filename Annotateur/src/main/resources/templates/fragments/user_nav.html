@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<body>
+<nav th:fragment="user_nav"
+     class="navbar navbar-light bg-light px-3 shadow-sm">
+
+    <!-- lien Accueil / Mes tâches -->
+    <a class="navbar-brand fw-semibold"
+       th:href="@{/tasks}">Accueil</a>
+
+    <!-- espace extensible -->
+    <div class="flex-grow-1"></div>
+
+    <!-- formulaire POST /logout (CSRF) -->
+    <form th:action="@{/logout}" method="post" class="m-0">
+        <input type="hidden" th:name="${_csrf.parameterName}"
+               th:value="${_csrf.token}"/>
+        <button class="btn btn-outline-secondary btn-sm">
+            Déconnexion
+        </button>
+    </form>
+</nav>
+</body>
+</html>

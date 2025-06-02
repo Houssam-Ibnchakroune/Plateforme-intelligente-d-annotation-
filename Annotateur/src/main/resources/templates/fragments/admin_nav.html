@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<nav th:fragment="nav" class="navbar navbar-expand-lg navbar-dark bg-dark px-3">
+
+    <ul class="navbar-nav me-auto">
+        <li class="nav-item"><a class="nav-link" th:href="@{/admin/datasets}">Datasets</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/admin/annotators}">Annotateurs</a></li>
+        <li class="nav-item"><a class="nav-link" th:href="@{/admin/advanced}">Options avancées</a></li>
+    </ul>
+    <form th:action="@{/logout}" method="post" class="d-flex">
+        <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+        <button class="btn btn-outline-light btn-sm">Déconnexion</button>
+    </form>
+</nav>
+
+</body>
+</html>
