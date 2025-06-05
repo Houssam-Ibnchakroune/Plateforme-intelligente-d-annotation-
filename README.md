@@ -12,10 +12,10 @@ Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation co
 | Bloc | Ce que l’on peut faire |
 |------|------------------------|
 | **Authentification** | Connexion / déconnexion sécurisée via Spring Security. |
-| **Administration** | • Créer / modifier des annotateurs <br> • Activer / désactiver (suppression logique) |
+| **Administration** | • Créer / modifier des annotateurs <br> • désactiver (suppression logique) |
 | **Datasets** | • Import CSV / JSON (`id,text1,text2`) <br> • Aperçu des 5 premières paires <br> • Affectation d’annotateurs <br> • Calcul de l’avancement (%) |
 | **Annotation** | Interface minimale où chaque annotateur étiquette ses paires restantes. |
-| **Export** | CSV final : `id,texte1,texte2,classe,annotateur,date`. |
+| **Export** | CSV final : `id,texte,classe,annotateur,date`. |
 | **Analyse (Python)** | • `metrics.py` → Fleiss κ global + κ par annotateur <br> • `spam.py` → détection des “spammeurs” (κ \< seuil). Résultats intégrés côté Web. |
 
 ---
@@ -54,14 +54,14 @@ Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation co
 
 ```bash
 # 1. cloner le projet
-git clone https://github.com/<votre-org>/Annonateur.git
-cd Annonateur
+git clone https://github.com/Houssam-Ibnchakroune/Plateforme-intelligente-d-annotation-.git
+cd ./Plateforme-intelligente-d-annotation-/Annonateur
 
 # 2. (optionnel) créer un venv Python puis installer les libs
 python -m venv .venv && source .venv/bin/activate
 pip install -r scripts/requirements.txt  # numpy, pandas, scikit-learn
 
-# 3. configurer la BDD (src/main/resources/application.yml)
+# 3. configurer la BDD (src/main/resources/application.properties)
 #    spring.datasource.url, username, password
 
 # 4. lancer
@@ -74,12 +74,12 @@ Rôle	Login / mot de passe
 Admin	admin / admin123
 Annot.	annot1 / annotpass
 
-(cf. data.sql ou créer via l’interface admin)
+
 
 ## 🖱️ Parcours typique
 Connexion en tant qu’admin (/login).
 
-Gestion Annotateurs : CRUD + bouton Activer/Désactiver (suppression logique : on passe enabled=false, les stats sont conservées).
+Gestion Annotateurs : CRUD + bouton Désactiver (suppression logique : on passe enabled=false, les stats sont conservées).
 
 Onglet Datasets :
 
@@ -91,7 +91,7 @@ Détails → aperçus, % d’avancement, export, métriques, spammeurs.
 
 Annotation (profil annotateur) : liste de paires non étiquetées, choix du label, sauvegarde.
 
-Export final → CSV signé (id, textes, label majoritaire, annotateur, date).
+Export final → CSV signé (id, texte, classe , annotateur, date).
 
 ## 📝 Notes d’implémentation
 Point	Détail
