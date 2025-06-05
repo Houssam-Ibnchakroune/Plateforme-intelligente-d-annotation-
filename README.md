@@ -55,7 +55,7 @@ Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation co
 ```bash
 # 1. cloner le projet
 git clone https://github.com/Houssam-Ibnchakroune/Plateforme-intelligente-d-annotation-.git
-cd ./Plateforme-intelligente-d-annotation-/Annonateur
+cd ./Plateforme-intelligente-d-annotation-/Annotateur
 
 # 2. (optionnel) créer un venv Python puis installer les libs
 python -m venv .venv && source .venv/bin/activate
