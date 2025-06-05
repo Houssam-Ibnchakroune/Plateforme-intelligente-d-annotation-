@@ -70,7 +70,9 @@ Par défaut, les scripts Python sont cherchés dans ./scripts.
 
 ## 🔑 Comptes de démo
 Rôle	Login / mot de passe
+
 Admin	admin / admin123
+
 Annot.	annot1 / annotpass
 
 
