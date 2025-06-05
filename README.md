@@ -44,8 +44,8 @@ Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation co
 | Outil | Version conseillée |
 |-------|--------------------|
 | JDK   | 21 + |
-| Maven | 3.9 + |
-| Python| ≥ 3.9 (avec **numpy**, **pandas**, **scikit-learn**) |
+| Maven | 4.0 + |
+| Python| ≥ 3.12 (avec **numpy**, **pandas**, **scikit-learn**) |
 | MySQL | 8 + (ou tout SGDB compatible JDBC) |
 
 ---
