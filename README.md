@@ -37,7 +37,7 @@ Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation co
 
 │   └─ … ← vues Thymeleaf (.html)
 
-└─ scripts
+├─ scripts
 
 |   ├─ metrics.py
 
