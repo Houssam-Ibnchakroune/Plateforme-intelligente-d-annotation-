@@ -71,7 +71,7 @@ Par défaut, les scripts Python sont cherchés dans ./scripts.
 
 ## 🔑 Comptes de démo
 Rôle	Login / mot de passe
-Admin	admin / admi123
+Admin	admin / admin123
 Annot.	annot1 / annotpass
 
 (cf. data.sql ou créer via l’interface admin)
