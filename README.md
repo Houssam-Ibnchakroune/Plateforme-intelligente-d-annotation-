@@ -22,15 +22,25 @@ Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation co
 
 ## 🏗️ Architecture rapide
 ├─ src/main/java
+
 │ ├─ controllers ← couches web 
+
 │ ├─ services ← logique métier (import, export, métriques …)
+
 │ ├─ models ← entités JPA
+
 │ ├─ repositories ← interfaces Spring-Data
+
 │ └─ security ← config Spring Security
+
 ├─ src/main/resources/templates
+
 │ └─ … ← vues Thymeleaf (.html)
+
 └─ scripts
+
 |  ├─ metrics.py
+
 |  └─ spam.py
 
 ---
