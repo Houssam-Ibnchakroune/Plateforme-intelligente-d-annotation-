@@ -2,8 +2,8 @@
 
 Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation collaborative de jeux de paires de phrases (NLI, similarité, etc.).
 
-> **Encadrant :** Pr. Tarik **Boudaa**  
-> **Contributeurs :** Ibnchakroune **Houssam** · **Salma Kamal**
+> **Encadrant :** Pr. **Tarik Boudaa**  
+> **Contributeurs :**Ibnchakroune Houssam** · **Kamal Salma**
 
 ---
 
