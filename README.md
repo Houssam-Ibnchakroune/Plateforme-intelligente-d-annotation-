@@ -59,7 +59,6 @@ cd ./Plateforme-intelligente-d-annotation-/Annotateur
 
 # 2. (optionnel) créer un venv Python puis installer les libs
 python -m venv .venv && source .venv/bin/activate
-pip install -r scripts/requirements.txt  # numpy, pandas, scikit-learn
 
 # 3. configurer la BDD (src/main/resources/application.properties)
 #    spring.datasource.url, username, password
