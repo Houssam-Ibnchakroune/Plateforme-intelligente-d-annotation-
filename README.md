@@ -92,8 +92,13 @@ Export final → CSV signé (id, textes, label majoritaire, annotateur, date).
 ## 📝 Notes d’implémentation
 Point	Détail
 Suppression “logique”	On ne supprime jamais vraiment : on garde les historiques d’annotations.
+
 Taux d’avancement	completionPercent = #paires_annotées / #total • 100.
+
 Requêtes custom dans TextPairRepository.
+
 Fleiss κ	Calculé en Python (plus simple pour le matriciel) puis renvoyé en JSON.
+
 Détection spam	κ individuel vs majorité < seuil (0.20) et au moins n ≥ 3 paires.
+
 Sécurité	Spring Security basique : formulaire login, BCrypt + rôle ADMIN / ANNOTATOR.
