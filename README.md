@@ -1,6 +1,6 @@
 # 📚 Annonateur
 
-Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation collaborative de jeux de paires de phrases (NLI, similarité, etc.).
+Application web **Spring Boot / Thymeleaf** pour la gestion et l’annotation collaborative de jeux de paires de phrases (NLI, similarité).
 
 > **Encadrant :** Pr. **Tarik Boudaa**  
 > **Contributeurs :** **Ibnchakroune Houssam** · **Kamal Salma**
