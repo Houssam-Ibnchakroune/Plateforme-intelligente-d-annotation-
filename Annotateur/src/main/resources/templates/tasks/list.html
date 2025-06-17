@@ -2,29 +2,70 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Mes jeux à annoter</title>
-    <link rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+
+    <!-- Bootstrap 5 + icônes -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"  rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
 </head>
-<body class="p-4">
+
+<body class="bg-light">
+<!-- barre utilisateur réutilisable -->
 <div th:insert="~{fragments/user_nav :: user_nav}"></div>
-<h2>Mes jeux à annoter</h2>
 
-<table class="table table-bordered">
-    <tr><th>Dataset</th><th>Avancement</th><th>Action</th></tr>
+<div class="container py-4">
 
-    <tr th:each="r : ${rows}">
-        <td th:text="${r.ds.name}"></td>
-        <td th:text="${#numbers.formatDecimal(100.0 * r.done / r.total,0,0)} + '%'"></td>
-        <td>
-            <a class="btn btn-sm btn-primary"
-               th:href="@{'/annotate?dataset=' + ${r.ds.id}}">Travailler</a>
-        </td>
-    </tr>
+    <h2 class="mb-4"><i class="bi bi-journal-text me-2"></i>Mes jeux à annoter</h2>
 
-    <tr th:if="${rows.isEmpty()}">
-        <td colspan="3" class="text-center">Aucun dataset affecté</td>
-    </tr>
-</table>
+    <div class="card shadow-sm border-0">
+        <div class="table-responsive">
+            <table class="table table-hover align-middle mb-0">
+                <thead class="table-dark">
+                <tr>
+                    <th style="width:40%">Dataset</th>
+                    <th style="width:40%">Avancement</th>
+                    <th class="text-end" style="width:20%">Action</th>
+                </tr>
+                </thead>
 
+                <tbody>
+                <!-- ligne par dataset affecté -->
+                <tr th:each="r : ${rows}">
+                    <!-- nom -->
+                    <td th:text="${r.ds.name}"></td>
+
+                    <!-- barre de progression -->
+                    <td>
+                        <div class="progress" style="height: 1.2rem;">
+                            <div class="progress-bar bg-success"
+                                 role="progressbar"
+                                 th:style="'width:' +
+                                           ${#numbers.formatDecimal(100.0 * r.done / r.total,0,0)} +
+                                           '%'"
+                                 th:text="${#numbers.formatDecimal(100.0 * r.done / r.total,0,0)} + '%'">
+                            </div>
+                        </div>
+                    </td>
+
+                    <!-- bouton travailler -->
+                    <td class="text-end">
+                        <a class="btn btn-sm btn-primary"
+                           th:href="@{'/annotate?dataset=' + ${r.ds.id}}">
+                            <i class="bi bi-pencil-square me-1"></i>Travailler
+                        </a>
+                    </td>
+                </tr>
+
+                <!-- aucun dataset -->
+                <tr th:if="${rows.isEmpty()}">
+                    <td colspan="3" class="text-center py-4">
+                        <em>Aucun dataset affecté</em>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
 </body>
 </html>
